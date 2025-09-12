@@ -1,0 +1,223 @@
+:root{
+    --pri:#F8F4E1 ;
+    --sec:#4E1F00 ;
+    --tr1:#FEBA17 ;
+    --tr2:#74512D;
+}
+
+@font-face {
+    font-family: aeonik;
+    font-weight: 200;
+    src: url(./AeonikTRIAL-Light.otf);
+}
+@font-face {
+    font-family:aeonik;
+    font-weight: 500;
+    src: url(./AeonikTRIAL-Regular.otf);
+}
+@font-face {
+    font-family: aeonik;
+    font-weight: 700;
+    src: url(./AeonikTRIAL-Bold.otf);
+}
+*{
+    margin:0%;
+    padding:0%;
+    box-sizing:border-box;
+
+}
+html,body{
+     height:100%;
+     width: 100%;
+     color: #fff;
+}
+#main{
+    height:100%;
+    width: 100%;
+    background-color: var(--sec);
+    font-family: aeonik;
+    position: relative;
+}
+
+ section.allelems{
+
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    padding-top: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 40px;
+
+
+ }
+  .elems{
+    width: 250px;
+    height: 300px;
+     font-size: 20px;
+     overflow: hidden;
+     border-radius: 10px;
+     cursor: pointer;
+     transition: all ease 0.2s;
+     position: relative;
+
+  }
+  .elems:active{
+
+     scale:0.97;
+  }
+  .elems img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .elems h2{
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    font-size: 25px;
+    font-weight: 500;
+    color:white;
+
+  }
+
+
+
+  section.fullElem{
+    width: 100%;
+    height: 100%;
+     color: white;
+     background: var(--sec);
+     padding: 20px;
+     display: none;
+     position: absolute;
+     top: 0;
+  }
+
+  .back{
+    position: absolute;
+    font-size: 25px;
+    right: 5%;
+    top: 5%;
+    padding: 11px 15px;
+    border-radius: 9%;
+    background-color: var(--tr1);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 200;
+    transition:  all ease 0.2s;
+  }
+
+  .back:active{
+     scale: 0.95;
+  }
+
+  /* fullPages design one by one  */
+
+  /** first is todo list page design  */
+   
+  .todo-list-fullPage{
+    
+     display: block;
+  }
+
+.todo-list-fullPage h2{
+
+    font-size:60px;
+    font-weight: 700;
+    margin-top: 25px;
+    margin-left: 20px;
+  
+}
+.todo-list-fullPage .todo-container{
+
+   height: 80%;
+   width: 100%;
+   /* background-color: var(--tr1); */
+   display: flex;
+   padding: 20px;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.todo-list-fullPage .todo-container .addTask{
+
+    height: 100%;
+    width: 40%;
+    background-color: var(--tr2);
+    border-radius: 15px;
+
+}
+.todo-list-fullPage .todo-container .addTask form{
+
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start ;
+    padding: 40px;
+   justify-content: space-between;
+  
+   
+}
+
+.todo-list-fullPage .todo-container .addTask form input{
+
+    width: 100%;
+    height: 50px;
+    border-radius: 9px;
+    border: none;
+    outline: none;
+    padding: 2px 10px;
+    background-color:var(--sec);
+    font-size: 20px;
+    font-weight: 200;
+    color: #FEBA17;
+}
+
+.todo-list-fullPage .todo-container .addTask form textarea{
+
+    width: 100%;
+    
+    border-radius: 9px;
+    height: 330px;
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    background-color:var(--sec);
+    font-size: 20px;
+    font-weight: 200;
+    color: #FEBA17;
+}
+
+
+.todo-list-fullPage .todo-container .addTask form button{
+
+    width: 100%;
+    
+    border-radius: 9px;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    background-color:var(--tr1);
+    color: white;
+    font-size: 20px;
+    font-weight: 200;
+   
+}
+
+
+.todo-list-fullPage .todo-container .allTask{
+    height: 100%;
+    width: 58%;
+    background-color: var(--tr2);
+    border-radius: 15px;
+}
+
+
+
+
+
