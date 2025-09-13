@@ -163,7 +163,7 @@ html,body{
    
 }
 
-.todo-list-fullPage .todo-container .addTask form input{
+.todo-list-fullPage .todo-container .addTask form #task-title{
 
     width: 100%;
     height: 50px;
@@ -182,7 +182,7 @@ html,body{
     width: 100%;
     
     border-radius: 9px;
-    height: 330px;
+    height: 300px;
     border: none;
     outline: none;
     padding: 5px 10px;
@@ -190,6 +190,16 @@ html,body{
     font-size: 20px;
     font-weight: 200;
     color: #FEBA17;
+}
+.todo-list-fullPage .todo-container .addTask form .checkbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 200;
+    color: var(white);
 }
 
 
@@ -206,6 +216,7 @@ html,body{
     color: white;
     font-size: 20px;
     font-weight: 200;
+    cursor: pointer;
    
 }
 
@@ -215,7 +226,75 @@ html,body{
     width: 58%;
     background-color: var(--tr2);
     border-radius: 15px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow:auto;
 }
+.todo-list-fullPage .todo-container .allTask::-webkit-scrollbar{
+    display: none;
+
+}
+
+
+
+.todo-list-fullPage .todo-container .allTask .task{
+     width: 100%;
+     background-color: var(--tr1);
+     border-radius: 9px;
+     padding: 5px 8px ;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+
+
+}
+.todo-list-fullPage .todo-container .allTask .task h3{
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--sec);
+    padding: 10px;
+}
+.todo-list-fullPage .todo-container .allTask .task span{
+    background-color: red;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 9px;
+    font-size: 15px;
+    margin-left: 10px;
+
+}
+.todo-list-fullPage .todo-container .allTask .task span.true{
+    opacity: 1;
+}
+.todo-list-fullPage .todo-container .allTask .task span.false{
+    opacity: 0;
+}
+
+
+.todo-list-fullPage .todo-container .allTask .task h4{
+     font-size: 20px;
+    font-weight: 500;
+    color: var(--tr2);
+    padding: 10px;
+}
+.todo-list-fullPage .todo-container .allTask .task button{
+
+    background-color: green;
+    padding: 10px 15px;
+    color: white;
+    border: none;
+    border-radius: 9px ;
+    cursor: pointer;
+
+}
+
+.todo-list-fullPage .todo-container .allTask .task button:active{
+    scale: 0.97;
+    cursor: pointer;
+}
+
 
 
 
