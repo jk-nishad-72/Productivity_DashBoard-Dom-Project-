@@ -139,7 +139,42 @@ const currentTask = [
  */
 }
 
-
-
-
 todo();
+
+ var dayPlanner = document.querySelector('.day-planner')
+
+   var planingsData = JSON.parse(localStorage.getItem('planingsData')) || {}
+  
+ let hours = Array.from({length:18},(_,idx)=>`${6+idx}:00 - ${7+idx}:00`)
+
+  var wholeDaysum =''
+ hours.forEach(function(elem,idx){
+
+     var savedData = planingsData[idx] || ''
+    wholeDaysum += `<div class="day-plnr-time">
+              <p>${elem} </p>
+              <input type="text" placeholder="Panning...." id=${idx} value= ${savedData} >
+            </div>`
+ })
+
+
+ dayPlanner.innerHTML = wholeDaysum
+
+
+
+ var dayPlnnerInput = document.querySelectorAll('.day-plnr-time input')
+
+
+
+ dayPlnnerInput.forEach((elem)=>{
+     
+       elem.addEventListener('input',function(){
+
+            planingsData[elem.id] = elem.value
+
+      localStorage.setItem('planingsData',JSON.stringify(planingsData))
+          
+       })
+
+ })
+
