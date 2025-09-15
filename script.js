@@ -20,7 +20,7 @@ function PageOpenfeature() {
   });
 }
 
-PageOpenfeature();
+// PageOpenfeature();
 
 
 
@@ -139,8 +139,12 @@ const currentTask = [
  */
 }
 
-todo();
+// todo();
 
+
+function dailyPlannr(){
+
+  
  var dayPlanner = document.querySelector('.day-planner')
 
    var planingsData = JSON.parse(localStorage.getItem('planingsData')) || {}
@@ -177,4 +181,12 @@ todo();
        })
 
  })
+
+
+}
+
+// dailyPlannr() 
+
+
+
 
