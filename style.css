@@ -3,6 +3,8 @@
     --sec:#4E1F00 ;
     --tr1:#FEBA17 ;
     --tr2:#74512D;
+    --black:#000;
+    --green:#02cd02;
 }
 
 @font-face {
@@ -469,6 +471,64 @@ html,body{
    font-size: 30px;
      
  }
+
+
+ 
+ section.pomodoro-fullpage{
+    background-color: var(--sec);
+ }
+.pomodoro-fullpage h2 {
+    font-size: 50px;
+}
+
+.pomodoro-fullpage .pomo-timer {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.pomo-timer h1 {
+    font-size: 170px;
+}
+
+.pomo-timer button{
+    background-color: var(--tr2);
+    padding: 15px 40px;
+    font-size: 32px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+    -webkit-box-shadow: 7px 7px 0px var(--black);
+    box-shadow: 7px 7px 0px var(--black);
+    -webkit-transition: all ease 0.1s;
+    -o-transition: all ease 0.1s;
+    transition: all ease 0.1s;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.pomo-timer button:active {
+    -webkit-box-shadow: 0px 0px 0px var(--black);
+    box-shadow: 0px 0px 0px var(--black);
+
+}
+
+.pomodoro-fullpage .session {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    background-color: var(--green);
+    padding: 15px 30px;
+    font-size: 30px;
+    border-radius: 5px;
+}
 
 
 

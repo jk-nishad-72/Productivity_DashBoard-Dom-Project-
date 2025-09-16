@@ -188,34 +188,17 @@ function dailyPlannr(){
 dailyPlannr() 
 
 
- var motivation2Qoutes = document.querySelector('.motivation-2')
- var motivation3Aurthor  = document.querySelector('.motivation-3')
 
-//  async function getPosts() {
-//   try {
-//     const response = await fetch("https://api.allorigins.win/raw?url=https://zenquotes.io/api/random");
-//     if (!response.ok) {
-//       throw new Error("Failed to fetch posts");
-//     }
-//     const data = await response.json();
-//      console.log(data) 
-
-//      motivation2Qoutes.innerHTML = `<h1> ${data[0].q} </h1>`
-//      motivation3Aurthor.innerHTML =`<h2>${data[0].a}</h2> `
-
-
-//   } catch (error) {
-//     console.error("Error:", error);
-//   }
-// }
-
-// getPosts();
 
 
 function motivationalQuote() {
-    
+    var motivation2Qoutes = document.querySelector('.motivation-2')
+ var motivation3Aurthor  = document.querySelector('.motivation-3')
 
     async function fetchQuote() {
+
+      
+ 
 
         let response = await fetch('https://api.allorigins.win/raw?url=https://zenquotes.io/api/random')
         let data = await response.json()
@@ -232,6 +215,8 @@ function motivationalQuote() {
 }
 
 motivationalQuote()
+
+
 
 
 
