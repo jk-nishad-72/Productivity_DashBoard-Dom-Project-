@@ -369,7 +369,7 @@ html,body{
  /* daily planner Page */
 
  section.moti-fullPage{
-    display: block;
+    /* display: block; */
     /* position: relative; */
      
  }
@@ -377,6 +377,7 @@ html,body{
 
       height: 100%;
       width: 100%;
+      border:2px solid var(--tr2);
 
  }
 
@@ -404,6 +405,7 @@ html,body{
      scale: 1.2;
      z-index: 8;
      filter: blur(150px);
+
  }
 
  .moti-fullPage .moti-container .motivation-wrapper{
@@ -415,6 +417,7 @@ html,body{
      border-radius: 20px;
      background-color: var(--tr1);
      padding: 10px;
+     border: 5px solid var(--sec);
 
      
  }
