@@ -22,12 +22,8 @@ function PageOpenfeature() {
 
 PageOpenfeature();
 
-
-
-
 function todo() {
-
-     /**
+  /**
       * 
       *   
 const currentTask = [
@@ -49,7 +45,6 @@ const currentTask = [
 
 ]
       */
-
 
   let currentTask = [];
 
@@ -141,82 +136,145 @@ const currentTask = [
 
 todo();
 
+function dailyPlannr() {
+  var dayPlanner = document.querySelector(".day-planner");
 
-function dailyPlannr(){
+  var planingsData = JSON.parse(localStorage.getItem("planingsData")) || {};
 
-  
- var dayPlanner = document.querySelector('.day-planner')
+  let hours = Array.from(
+    { length: 18 },
+    (_, idx) => `${6 + idx}:00 - ${7 + idx}:00`
+  );
 
-   var planingsData = JSON.parse(localStorage.getItem('planingsData')) || {}
-  
- let hours = Array.from({length:18},(_,idx)=>`${6+idx}:00 - ${7+idx}:00`)
-
-  var wholeDaysum =''
- hours.forEach(function(elem,idx){
-
-     var savedData = planingsData[idx] || ''
+  var wholeDaysum = "";
+  hours.forEach(function (elem, idx) {
+    var savedData = planingsData[idx] || "";
     wholeDaysum += `<div class="day-plnr-time">
               <p>${elem} </p>
               <input type="text" placeholder="Panning...." id=${idx} value= ${savedData} >
-            </div>`
- })
+            </div>`;
+  });
 
+  dayPlanner.innerHTML = wholeDaysum;
 
- dayPlanner.innerHTML = wholeDaysum
+  var dayPlnnerInput = document.querySelectorAll(".day-plnr-time input");
 
+  dayPlnnerInput.forEach((elem) => {
+    elem.addEventListener("input", function () {
+      planingsData[elem.id] = elem.value;
 
-
- var dayPlnnerInput = document.querySelectorAll('.day-plnr-time input')
-
-
-
- dayPlnnerInput.forEach((elem)=>{
-     
-       elem.addEventListener('input',function(){
-
-            planingsData[elem.id] = elem.value
-
-      localStorage.setItem('planingsData',JSON.stringify(planingsData))
-          
-       })
-
- })
-
-
+      localStorage.setItem("planingsData", JSON.stringify(planingsData));
+    });
+  });
 }
 
-dailyPlannr() 
-
-
-
-
+dailyPlannr();
 
 function motivationalQuote() {
-    var motivation2Qoutes = document.querySelector('.motivation-2')
- var motivation3Aurthor  = document.querySelector('.motivation-3')
+  var motivation2Qoutes = document.querySelector(".motivation-2");
+  var motivation3Aurthor = document.querySelector(".motivation-3");
 
-    async function fetchQuote() {
+  async function fetchQuote() {
+    let response = await fetch(
+      "https://api.allorigins.win/raw?url=https://zenquotes.io/api/random"  
+    );
+    let data = await response.json();
 
-      
- 
+    console.log(data);
 
-        let response = await fetch('https://api.allorigins.win/raw?url=https://zenquotes.io/api/random')
-        let data = await response.json()
+    motivation2Qoutes.innerHTML = ` <h1>${data[0].q} </h1>`;
+    motivation3Aurthor.innerHTML = `  <h2>${data[0].a} </h2>  `;
+  }
 
-
-         console.log(data)  
-
-
-        motivation2Qoutes.innerHTML = ` <h1>${data[0].q} </h1>`
-        motivation3Aurthor.innerHTML =   `  <h2>${data[0].a} </h2>  `
-    }
-
-    fetchQuote()
+  fetchQuote();
 }
 
-motivationalQuote()
+motivationalQuote();
+
+
+function pomodorTimer(){
+
+  
+let timer = document.querySelector(".pomo-timer h1");
+var startTimer = document.querySelector(".start-timer");
+var pauseTimer = document.querySelector(".pause-timer");
+var resetTimer = document.querySelector(".reset-timer");
+var sesstion = document.querySelector('.session')
+var isWorkSession = true
+
+let timerInerval = null;
+var totalSecoconds = 25 * 60;
+
+
+function upDateTime() {
+  let minuts = Math.floor(totalSecoconds / 60);
+  let seconds = totalSecoconds % 60;
+
+  timer.innerHTML = `${String(minuts).padStart("2", "0")} : 
+  ${String(seconds).padStart("2", "0")} `;
+}
 
 
 
+function StartTimer() {
+
+  clearInterval(timerInerval)
+
+  if(isWorkSession){
+
+      timerInerval = setInterval(() => {
+    if (totalSecoconds > 0) {
+      totalSecoconds--;
+      upDateTime();
+    } else {
+       isWorkSession = false
+      clearInterval(timerInerval);
+      timer.innerHTML = '05 : 00'
+      sesstion.innerHTML = 'Take a Break '
+       sesstion.style.backgroundColor = 'var(--blue)'
+       totalSecoconds = 5*60
+    }
+  }, 1000);
+    
+  } else{
+      timerInerval = setInterval(() => {
+    if (totalSecoconds > 0) {
+      totalSecoconds--;
+      upDateTime();
+    } else {
+       isWorkSession = true
+      clearInterval(timerInerval);
+      timer.innerHTML = '25 : 00'
+      sesstion.innerHTML = 'Work Session '
+       sesstion.style.backgroundColor = 'var(--green)'
+       totalSecoconds = 25*60
+    }
+  }, 1000);
+
+}
+
+}
+
+function PauseTimer() {
+  clearInterval(timerInerval);
+}
 
 
+function ResetTimer() {
+  totalSecoconds = 25 * 60;
+  upDateTime();
+}
+
+startTimer.addEventListener("click", function () {
+  StartTimer();
+});
+pauseTimer.addEventListener("click", PauseTimer);
+
+resetTimer.addEventListener("click", function () {
+  ResetTimer();
+});
+
+}   
+
+
+pomodorTimer() 
