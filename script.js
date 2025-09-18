@@ -278,3 +278,31 @@ resetTimer.addEventListener("click", function () {
 
 
 pomodorTimer() 
+
+
+var api = '14a8aab8d78c4226bac162912251809';
+var city = 'london'
+var data = null;
+
+ async function weatherAPIcALL(){
+
+        var response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${api}&q=${city}`)
+       data  = await response.json()
+        console.log(data);
+        
+
+}
+
+weatherAPIcALL() 
+
+
+function timeDate(){
+
+   let date = new Date()
+
+    console.log(date);
+    
+
+  }
+
+  timeDate()
