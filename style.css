@@ -44,9 +44,7 @@ html,body{
 }
 
 
-nav {
-
-       
+nav{       
     top: 0;
     z-index: 99;
     height: 20px;
@@ -56,9 +54,9 @@ nav {
 
 }
 
-.nav-in {
+.nav-in{
 
-     background-color: var(--tr2);
+       background-color: var(--tr2);
        padding: 1rem;
        border-radius: 9px;
        display: flex;
