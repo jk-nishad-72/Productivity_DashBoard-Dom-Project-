@@ -280,15 +280,36 @@ resetTimer.addEventListener("click", function () {
 pomodorTimer() 
 
 
+
+function weatherFunctionality(){
+
+  
+
+
 var api = '14a8aab8d78c4226bac162912251809';
-var city = 'london'
+var city = 'Raipur'
 var data = null;
+
+ var header1Time = document.querySelector('.header1 h1')
+ var header1Date = document.querySelector('.header1 h2')
+    var header2Temp = document.querySelector('.header2 h2')
+    var header2Condition = document.querySelector('.header2 h4')
+    var precipitation = document.querySelector('.header2 .precipitation')
+    var humidity = document.querySelector('.header2 .humidity')
+    var wind = document.querySelector('.header2 .wind')
+
 
  async function weatherAPIcALL(){
 
         var response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${api}&q=${city}`)
        data  = await response.json()
         console.log(data);
+
+            header2Temp.innerHTML = `${data.current.temp_c}°C`
+        header2Condition.innerHTML = `${data.current.condition.text}`
+        wind.innerHTML = `Wind: ${data.current.wind_kph} km/h`
+        humidity.innerHTML = `Humidity: ${data.current.humidity}%`
+        precipitation.innerHTML = `Heat Index : ${data.current.heatindex_c}%`
         
 
 }
@@ -296,13 +317,85 @@ var data = null;
 weatherAPIcALL() 
 
 
+
+
 function timeDate(){
 
-   let date = new Date()
+   const totalDaysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
-    console.log(date);
-    
+        const monthNames = [
+            "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
 
+
+        let date = new Date()
+  
+        var dayOfWeek = totalDaysOfWeek[date.getDay()]
+        var hours = date.getHours()
+        var minutes = date.getMinutes()
+        var seconds = date.getSeconds()
+        var tarik = date.getDate()
+        var month = monthNames[date.getMonth()]
+        var year = date.getFullYear()
+
+ header1Date.innerHTML = `${tarik} ${month}, ${year}`
+         if (hours > 12) {
+            header1Time.innerHTML = `${dayOfWeek}, ${String(hours - 12).padStart('2', '0')}:${String(minutes).padStart('2', '0')}:${String(seconds).padStart('2', '0')} PM`
+
+        } else {
+            header1Time.innerHTML = `${dayOfWeek}, ${String(hours).padStart('2', '0')}:${String(minutes).padStart('2', '0')}:${String(seconds).padStart('2', '0')} AM`
+        }
   }
 
-  timeDate()
+  setInterval(()=>{
+     timeDate()
+  },1000)
+}
+
+
+
+
+weatherFunctionality()
+
+
+
+
+
+function changeTheme() {
+
+    var theme = document.querySelector('.theme')
+    var rootElement = document.documentElement
+
+    var flag = 0
+    theme.addEventListener('click', function () {
+
+        if (flag == 0) {
+            rootElement.style.setProperty('--pri', '#F8F4E1')
+            rootElement.style.setProperty('--sec', '#222831')
+            rootElement.style.setProperty('--tr1', '#948979')
+            rootElement.style.setProperty('--tr2', '#393E46')
+            flag = 1
+        } else if (flag == 1) {
+            rootElement.style.setProperty('--pri', '#F1EFEC')
+            rootElement.style.setProperty('--sec', '#030303')
+            rootElement.style.setProperty('--tr1', '#D4C9BE')
+            rootElement.style.setProperty('--tr2', '#123458')
+            flag = 2
+        } else if (flag == 2) {
+            rootElement.style.setProperty('--pri', '#F8F4E1')
+            rootElement.style.setProperty('--sec', '#381c0a')
+            rootElement.style.setProperty('--tr1', '#FEBA17')
+            rootElement.style.setProperty('--tr2', '#74512D')
+            flag = 0
+        }
+
+    })
+
+
+}
+
+changeTheme()
+
+
+
