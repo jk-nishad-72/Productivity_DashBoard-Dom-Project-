@@ -1,3 +1,4 @@
+
 :root{
     --pri:#F8F4E1 ;
     --sec:#4E1F00 ;
@@ -6,6 +7,7 @@
     --black:#000;
     --green:#02cd02;
     --blue:#1cdcd9;
+    --white:#fff;
 }
 
 @font-face {
@@ -26,7 +28,8 @@
 *{
     margin:0%;
     padding:0%;
-    box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+     box-sizing:border-box;
 
 }
 html,body{
@@ -35,8 +38,9 @@ html,body{
      color: #fff;
 }
 #main{
-    height:100%;
-    width: 100%;
+  
+    width: 100vw;
+    height: 100vh;
     background-color: var(--sec);
     font-family: aeonik;
     position: relative;
@@ -59,9 +63,15 @@ nav{
        background-color: var(--tr2);
        padding: 1rem;
        border-radius: 9px;
+       display: -webkit-box;
+       display: -ms-flexbox;
        display: flex;
-       align-items: center;
-       justify-content: space-between;
+       -webkit-box-align: center;
+           -ms-flex-align: center;
+               align-items: center;
+       -webkit-box-pack: justify;
+           -ms-flex-pack: justify;
+               justify-content: space-between;
     
 }
 
@@ -115,9 +125,15 @@ nav{
      margin-bottom: 2rem;
      margin-top: 2rem;
      border-radius: 9px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     padding: 5vw;
  }
 
@@ -173,6 +189,8 @@ header .header2 h4{
      overflow: hidden;
      border-radius: 10px;
      cursor: pointer;
+     -webkit-transition: all ease 0.2s;
+     -o-transition: all ease 0.2s;
      transition: all ease 0.2s;
      position: relative;
 
@@ -184,7 +202,8 @@ header .header2 h4{
   .elems img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .elems h2{
     position: absolute;
@@ -199,9 +218,9 @@ header .header2 h4{
 
 
   section.fullElem{
-    width: 100%;
-    height: 100%;
-     color: white;
+    width: 100vw;
+    height: 100vh;
+  
      background: var(--sec);
      padding: 20px;
      display: none;
@@ -221,6 +240,8 @@ header .header2 h4{
     border: none;
     cursor: pointer;
     font-weight: 200;
+    -webkit-transition:  all ease 0.2s;
+    -o-transition:  all ease 0.2s;
     transition:  all ease 0.2s;
   }
 
@@ -250,10 +271,16 @@ header .header2 h4{
    height: 80%;
    width: 100%;
    /* background-color: var(--tr1); */
+   display: -webkit-box;
+   display: -ms-flexbox;
    display: flex;
    padding: 20px;
-   align-items: center;
-   justify-content: space-between;
+   -webkit-box-align: center;
+       -ms-flex-align: center;
+           align-items: center;
+   -webkit-box-pack: justify;
+       -ms-flex-pack: justify;
+           justify-content: space-between;
 }
 
 .todo-list-fullPage .todo-container .addTask{
@@ -268,11 +295,20 @@ header .header2 h4{
 
     height: 100%;
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items:flex-start ;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align:start;
+        -ms-flex-align:start;
+            align-items:flex-start ;
     padding: 40px;
-   justify-content: space-between;
+   -webkit-box-pack: justify;
+       -ms-flex-pack: justify;
+           justify-content: space-between;
   
    
 }
@@ -307,9 +343,15 @@ header .header2 h4{
     color: #FEBA17;
 }
 .todo-list-fullPage .todo-container .addTask form .checkbox{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     width: 100%;
     gap: 10px;
     font-size: 20px;
@@ -342,8 +384,13 @@ header .header2 h4{
     background-color: var(--tr2);
     border-radius: 15px;
     padding: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     gap: 10px;
     overflow:auto;
 }
@@ -359,9 +406,15 @@ header .header2 h4{
      background-color: var(--tr1);
      border-radius: 9px;
      padding: 5px 8px ;
+     display: -webkit-box;
+     display: -ms-flexbox;
      display: flex;
-     align-items: center;
-     justify-content: space-between;
+     -webkit-box-align: center;
+         -ms-flex-align: center;
+             align-items: center;
+     -webkit-box-pack: justify;
+         -ms-flex-pack: justify;
+             justify-content: space-between;
 
 
 }
@@ -433,10 +486,17 @@ header .header2 h4{
     padding: 20px;
     border-radius: 9px;
      overflow: auto;
-     flex-wrap: wrap;
+     -ms-flex-wrap: wrap;
+         flex-wrap: wrap;
+       display: -webkit-box;
+       display: -ms-flexbox;
        display: flex;
-       align-items: flex-start;
-       justify-content: space-between;
+       -webkit-box-align: start;
+           -ms-flex-align: start;
+               align-items: flex-start;
+       -webkit-box-pack: justify;
+           -ms-flex-pack: justify;
+               justify-content: space-between;
 
 }
 .daily-planner-fullPage .day-planner::-webkit-scrollbar{
@@ -449,6 +509,8 @@ header .header2 h4{
 
      position: relative;
      width: 49%;
+     display: -webkit-box;
+     display: -ms-flexbox;
      display: flex;
      margin-bottom: 14px;
      
@@ -498,7 +560,9 @@ header .header2 h4{
     position: relative;
     top: 50%;
     left: 50%;
-    transform:translate(-50%,-50%);
+    -webkit-transform:translate(-50%,-50%);
+        -ms-transform:translate(-50%,-50%);
+            transform:translate(-50%,-50%);
     border-radius: 50px;
 
 
@@ -513,7 +577,8 @@ header .header2 h4{
      border-radius: 50px;
      scale: 1.2;
      z-index: 8;
-     filter: blur(150px);
+     -webkit-filter: blur(150px);
+             filter: blur(150px);
 
  }
 
@@ -532,12 +597,24 @@ header .header2 h4{
  }
  .motivation-1{
    
+     display: -webkit-box;
+   
+     display: -ms-flexbox;
+   
      display: flex;
-     align-items: center;
-     justify-content: flex-start;
+     -webkit-box-align: center;
+         -ms-flex-align: center;
+             align-items: center;
+     -webkit-box-pack: start;
+         -ms-flex-pack: start;
+             justify-content: flex-start;
  }
 
  .motivation-1 h2{
+  
+   width: -webkit-fit-content;
+  
+   width: -moz-fit-content;
   
    width: fit-content;
    font-weight: 500;
@@ -561,13 +638,25 @@ header .header2 h4{
 
  .motivation-3{
 
+     display: -webkit-box;
+
+     display: -ms-flexbox;
+
      display: flex;
-     align-items: center;
-     justify-content: flex-end;
+     -webkit-box-align: center;
+         -ms-flex-align: center;
+             align-items: center;
+     -webkit-box-pack: end;
+         -ms-flex-pack: end;
+             justify-content: flex-end;
 
  }
 
  .motivation-3 h2{
+  
+   width: -webkit-fit-content;
+  
+   width: -moz-fit-content;
   
    width: fit-content;
    font-weight: 500;
@@ -637,6 +726,131 @@ header .header2 h4{
     border-radius: 5px;
 }
 
+
+
+/*  goal-full page  */
+
+section.goals-fullPage{
+    display: block;
+ 
+
+}
+
+.goals-fullPage h2{
+
+    font-size: 4vw;
+    margin-top: .2rem;
+    margin-left: 4rem;
+    text-transform: capitalize;
+    color: var(--white);
+    font-weight: 500;
+}
+
+.goal-container{
+
+    width: 100%;
+    height: 90%;
+    margin-top: 0.1rem;
+    padding: 2rem;
+}
+.g-btm-container{
+    width: 100%;
+    height: 100%;
+
+    border-radius: 1rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+
+}
+
+.g-btm-container .set-goal{
+    width: 40%;
+    height: 100%;
+    background-color: var(--tr2);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden
+}
+.g-btm-container .set-goal form{
+    
+    display: flex;
+     width: 100%;
+    height: 100%;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 2rem;
+    background-color:var(--tr2);
+    padding: 1rem;
+    
+}
+
+.g-input-field{
+    width: 100%;
+    height: 30%;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    display: flex;
+   
+
+
+
+}
+
+.g-btm-container .set-goal .goal-input{
+
+    background-color: var(--sec);
+    width: 100%;
+    height: 4rem;
+    border-radius: 0.5rem;
+    outline: none;
+    padding: .2rem 0.4rem;
+    font-size:2rem;
+    color: var(--tr1);
+    border: none;
+}
+.g-input-field button{
+     background-color: var(--tr1);
+    width: 50%;
+    height: 4rem;
+    border-radius: 0.5rem;
+    outline: none;
+    border: none;
+    padding: .2rem 0.4rem;
+    font-size:2rem;
+    color: var(--sec);
+}
+.g-btm-container .all-goals{
+
+    width: 55%;
+    height: 100%;
+    background-color: var(--sec);
+    border-radius: 1rem;
+     background-color:var(--tr2);
+}
+ 
+@media (max-width:500px) {
+    
+.goals-fullPage h2{
+
+    font-size: 8vw;
+    margin-top: 1.5rem;
+    margin-left: 2rem;
+   
+}
+
+.g-btm-container{
+    flex-direction: column;
+
+}
+
+
+
+    
+}
 
 
 
