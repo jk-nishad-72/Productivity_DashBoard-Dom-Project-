@@ -167,7 +167,6 @@ function dailyPlannr() {
     });
   });
 }
-
 dailyPlannr();
 
 function motivationalQuote() {
@@ -188,9 +187,7 @@ function motivationalQuote() {
 
   fetchQuote();
 }
-
 motivationalQuote();
-
 
 function pomodorTimer(){
 
@@ -275,11 +272,7 @@ resetTimer.addEventListener("click", function () {
 });
 
 }   
-
-
 pomodorTimer() 
-
-
 
 function weatherFunctionality(){
 
@@ -353,14 +346,7 @@ function timeDate(){
   },1000)
 }
 
-
-
-
 weatherFunctionality()
-
-
-
-
 
 function changeTheme() {
 
@@ -397,5 +383,12 @@ function changeTheme() {
 
 changeTheme()
 
+    var goalForm =  document.querySelector('.set-goal form')
+var goalInput = document.querySelector('.goal-input')
 
+goalForm.addEventListener('submit',function(e){
+  e.preventDefault()
+  
+  console.log(goalInput.value)
+})
 

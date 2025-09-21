@@ -730,6 +730,7 @@ header .header2 h4{
 
 
 /*  goal-full page  */
+
 .goals-fullPage h2{
 
     font-size: 4vw;
@@ -1046,7 +1047,6 @@ header .header2 h4{
 
 .pomodoro-fullpage .pomo-timer {
     margin-top: 10%;
-   
     width: 100%;
 }
 
@@ -1055,6 +1055,8 @@ header .header2 h4{
    width: 100%;
  }
 
+ 
+/*  goal-full page  */
 
 
 .goals-fullPage h2{
