@@ -672,10 +672,8 @@ header .header2 h4{
  }
 
 
+ /* pomodo full page  */
  
- section.pomodoro-fullpage{
-    background-color: var(--sec);
- }
 .pomodoro-fullpage h2 {
     font-size: 50px;
 }
@@ -732,9 +730,6 @@ header .header2 h4{
 
 
 /*  goal-full page  */
-
-
-
 .goals-fullPage h2{
 
     font-size: 4vw;
@@ -1030,6 +1025,35 @@ header .header2 h4{
     border-radius: .6rem;
   }
 
+ /* pomodo full page  */
+ section.pomodoro-fullpage{
+   margin-top: 4rem;
+ }
+.pomodoro-fullpage h2 {
+    font-size: 2rem;
+    margin-top: 1.7rem;
+    font-weight: 500;
+}
+
+.pomodoro-fullpage .session{
+    top: 15%;
+    font-size: 2rem;
+    width: 20rem;
+    text-align: center;
+    box-shadow: 0 0 10px var(--green);
+    font-weight: 500;
+}
+
+.pomodoro-fullpage .pomo-timer {
+    margin-top: 10%;
+   
+    width: 100%;
+}
+
+ .pomo-timer h1{
+   font-size: 7rem;
+   width: 100%;
+ }
 
 
 
