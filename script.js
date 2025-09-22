@@ -134,6 +134,9 @@ const currentTask = [
  */
 }
 
+
+
+
 todo();
 
 function dailyPlannr() {
@@ -383,12 +386,84 @@ function changeTheme() {
 
 changeTheme()
 
+
+/** goal features  */
+
+
+
+function GoalFeatur(){
+  
     var goalForm =  document.querySelector('.set-goal form')
-var goalInput = document.querySelector('.goal-input')
+    var goalInput = document.querySelector('.goal-input')
+
+    let allCurrentGoal =[
+      // {goal:'Be a listener '},
+      // {goal:'Be a Mern Developer '},
+      // {goal:'Be a carorPati '},
+    ]
+
+    if(JSON.parse(localStorage.getItem('allCurrentGoal'))){
+      allCurrentGoal = JSON.parse(localStorage.getItem("allCurrentGoal"))
+    }
+    else{
+      console.log('Goals section is empty ')
+    }
+    function renderGoals(){
+    var goalList = document.querySelector('.all-goals .allGoalList')
+    let clutter  = '';
+    allCurrentGoal.forEach((elem,idx)=>{
+      console.log(elem.goal)
+         clutter +=`  <div id=${idx} class="goal">
+                  <h1> ${elem.goal}  </h1>
+                 <button id=${idx} >  🎉 </button>
+            </div>`
+
+    })
+    // console.log(clutter)
+    goalList.innerHTML = clutter 
+
+
+      document.querySelectorAll('.allGoalList .goal button').forEach(function(btn){
+
+        //  console.log(btn)
+        btn.addEventListener('click',function(e){
+          // console.log( btn.id)
+          allCurrentGoal.splice(btn.id,1)
+
+           localStorage.setItem("allCurrentGoal",JSON.stringify(allCurrentGoal)) 
+        renderGoals() 
+
+
+        })
+      })
+
+
+    }
+
+    renderGoals();
+
 
 goalForm.addEventListener('submit',function(e){
   e.preventDefault()
   
-  console.log(goalInput.value)
+   allCurrentGoal.push({
+      goal:goalInput.value
+   })
+
+    localStorage.setItem("allCurrentGoal",JSON.stringify(allCurrentGoal)) 
+   renderGoals() 
+   goalInput.value =''
+
 })
+}
+
+GoalFeatur()
+
+
+  
+
+ 
+
+  
+
 

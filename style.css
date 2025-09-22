@@ -843,6 +843,13 @@ header .header2 h4{
      overflow:auto;
 
 }
+.g-btm-container .all-goals .allGoalList{
+display: flex;
+     flex-direction: column;
+     gap: 1rem;
+     overflow:auto;
+
+}
 .g-btm-container .all-goals::-webkit-scrollbar{
     display: none;
 }
