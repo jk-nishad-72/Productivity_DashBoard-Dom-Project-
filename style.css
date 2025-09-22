@@ -490,7 +490,7 @@ header .header2 h4{
     border-radius: 9px;
      overflow: auto;
      -ms-flex-wrap: wrap;
-         flex-wrap: wrap;
+     flex-wrap: wrap;
        display: -webkit-box;
        display: -ms-flexbox;
        display: flex;
@@ -499,9 +499,10 @@ header .header2 h4{
                align-items: flex-start;
        -webkit-box-pack: justify;
            -ms-flex-pack: justify;
-               justify-content: space-between;
+          justify-content: space-between;
 
 }
+
 .daily-planner-fullPage .day-planner::-webkit-scrollbar{
     display: none;
 }
@@ -516,11 +517,10 @@ header .header2 h4{
      display: -ms-flexbox;
      display: flex;
      margin-bottom: 14px;
-     
-   
-
   
  }
+
+ 
  .day-plnr-time p{
     color: var(--sec);
      position: absolute;
@@ -1013,6 +1013,15 @@ display: flex;
 
 }
 
+
+
+ .daily-planner-fullPage .day-planner .day-plnr-time{
+
+     width: 100%;
+ }
+
+
+
  /* Motivation full Page */
 
  .motivation-fullpage-container{
@@ -1104,6 +1113,8 @@ display: flex;
 
     
 }
+
+
 
 
 
